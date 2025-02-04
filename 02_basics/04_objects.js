@@ -62,4 +62,20 @@ const course ={
 const{courseInstructor:Instructor} = course; //destructuring the courseInstructor as Instructor result will be same 
 // console.log(courseInstructor);
 console.log(Instructor);
+               //--  json format--
+// {
+// "name": "aditya",
+// "coursename": "Js",
+// "price": "free"
+// }
+// [
+//   {
 
+//   },
+//   {
+
+//   },
+//   {
+
+//   }
+// ]
