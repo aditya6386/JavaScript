@@ -14,7 +14,9 @@ const regularUser = {
   }                            // node 02_basics/04_objects
 }
 // console.log(regularUser.fullname);  -- output-- { userfullname: { firstname: 'aditya', lastname: 'patel' } }
-// console.log(regularUser.fullname.userfullname.firstname);   -- output -- aditya
+// console.log(regularUser.fullname.userfullname.lastname); //  -- output -- aditya
+// console.log(regularUser.email);
+
 const obj1 = {1: "a", 2: "b"}
 const obj2 = {3: "c", 4: "d"}
 // const obj3 = {obj1, obj2}
@@ -40,7 +42,7 @@ const User = [
 ]
 User[1].email  //use for accessing the values from the User
 
-//now go back to tinder user obeject
+//now go back to tinder user object
 
 // console.log(tinderUser); //output -- { id: '123abc', name: ' Aditya', isLoggedIn: false }--
 // //Important//     
@@ -61,7 +63,7 @@ const course ={
 // course.courseInstructor
 const{courseInstructor:Instructor} = course; //destructuring the courseInstructor as Instructor result will be same 
 // console.log(courseInstructor);
-console.log(Instructor);
+//console.log(Instructor);
                //--  json format--
 // {
 // "name": "aditya",
@@ -78,4 +80,4 @@ console.log(Instructor);
 //   {
 
 //   }
-// ]
+// }
