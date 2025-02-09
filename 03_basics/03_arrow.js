@@ -24,8 +24,8 @@ welcomeMessage: function(){
 //     let username = "aditya"
 //     console.log(this.username);
 // }
-
-// const chai = () => {  //arrow function
+                                            //arrow function
+// const chai = () => {  
 //     let username = "aditya"
 //     console.log(this.username);  // output --undefined 
 // }
