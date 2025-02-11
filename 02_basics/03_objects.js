@@ -1,6 +1,6 @@
-// singleton   -- when the object is declared as a  constructors it will be singleton 
+// 1.singleton   -- when the object is declared as a  constructors it will be singleton 
 // object.create -- used to declare the object as constructor 
-// object literals --
+// 2.object literals --
                   // --- these two are the ways to declare the objects ---
     //Declaring symbol
    const mySym = Symbol("key1") 
