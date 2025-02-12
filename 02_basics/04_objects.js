@@ -32,11 +32,11 @@ const User = [
     email: "a@gmail.com"
   },
   {
-    id: 1,
+    id: 2,
     email: "a@gmail.com"
   },
   {
-    id: 1,
+    id: 3,
     email: "a@gmail.com"
   },
 ]
@@ -64,7 +64,7 @@ const course ={
 const{courseInstructor:Instructor} = course; //destructuring the courseInstructor as Instructor result will be same 
 // console.log(courseInstructor);
 //console.log(Instructor);
-               //--  json format--
+               //--json format--
 // {
 // "name": "aditya",
 // "coursename": "Js",
