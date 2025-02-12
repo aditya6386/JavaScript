@@ -17,8 +17,8 @@ function addTwoNumbers(number1, number2) {
 }
 const result = addTwoNumbers(3, 5)
 // console.log("result:", result);
-function loginUserMessage(username = "sam"){  //sam is a default value if the username is given below then that will be printed otherwise sam will be printed
-    if(username === undefined){          //  if(username === undefined) = if(!username) both are equal
+function loginUserMessage(username = "sam"){  //sam is a default value if the username is given below, then that username will be printed otherwise sam will be printed
+    if(username === undefined){          //  if(username === undefined) = if(!username) both are equal // here username is undefined 
         // console.log("Please enter the user name ");
         // return // here it is used so that if the username = undefined then the next return(return `${username},just loggedin`) will not be executed
     }
