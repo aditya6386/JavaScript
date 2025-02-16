@@ -11,7 +11,7 @@ const myNum = [1, 2, 3, 4, 5, 6, 7 ,8 ,9 , 10]
 
 // filter is used to return the values by checking the given condition (for each loop is also similar operation but didn't return the values)
 // const newNums = myNum.filter( (num) => num > 4 ) //it checks the condition and the values which are greater than 4 are returned
-// const newNums = myNum.filter( (num) =>{ //***********when we use curly braces we need to ise return keyword to return the value */
+// const newNums = myNum.filter( (num) =>{ //*********** when we use curly braces, we need to use return keyword to return the value */
 //     return num > 4
 // })
 // console.log(newNums);
