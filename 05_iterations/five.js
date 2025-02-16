@@ -35,7 +35,7 @@ coding.forEach((item, index, arr)=>{
 // cpp 4 [ 'js', 'java', 'ruby', 'python', 'cpp' ]
 
 //*****************************************IMPORTANT****************************************/
-//USEFUL WHEN ACCESSING THE DATA FROM DATABASE IN WHICH THE DATA IS RETREIVING IN THE ARRAY AS OBJECTS
+//USEFUL WHEN ACCESSING THE DATA FROM DATABASE IN WHICH THE DATA IS RETREIVING IN THE ARRAY of OBJECTS
 
 myCoding = [
     {
