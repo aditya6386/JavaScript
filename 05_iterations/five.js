@@ -25,7 +25,7 @@ function printMe(item) {
 
 // some more features in For Each Loop
 coding.forEach((item, index, arr)=>{
-    // console.log(item,index,arr); // it will print tems, index and the complete array
+    // console.log(item,index,arr); // it will print items, index and the complete array
 })
 // output
 // js 0 [ 'js', 'java', 'ruby', 'python', 'cpp' ]
