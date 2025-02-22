@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title </title>
+    <style>
+        .bg-black{
+            background-color: #212121;                       
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class = "bg-black" > 
+    <div>
+        <h1 id = "title" class="heading">DOM learning on chai or code <span style ="display: none;"> test text</span> </h1>
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
+        <input type="password" name="" id="">
+        <ul>
+            <li class = 'list-test'>one</li>
+            <li class = 'list-test'>two</li>
+            <li class = 'list-test'>three</li>
+            <li class = 'list-test'>four</li>
+        </ul>
+       
+       <p>Lorem ipsum dolor sit amet.</p>
+       
+    </div>
+</body>
+</html>
+
+<!-- 
+OPERATIONS IN CONSOLE
+document.getElementById('title')
+<h1 id=​"title" class=​"heading">​DOM learning on chai or code ​</h1>​
+
+document.getElementById('title').id
+'title'
+
+document.getElementById('title').class       //wrong
+undefined
+
+document.getElementById('title').className        //correct
+'heading'
+
+document.getElementById('title').getAttribute('id')
+'title'
+
+document.getElementById('title').setAttribute('class', 'test') // it has changed the class name from title to test
+undefined
+
+const title = document.getElementById('title')  // now we got the title variable and we can get the values by using this variable
+undefined
+
+for eg-
+
+title
+<h1 id=​"title" class=​"test">​DOM learning on chai or code ​</h1>​
+
+title.style.backgroundColor = 'green'
+'green'
+
+title.style.padding = '15px'
+'15px'
+
+title.style.borderRadius = '15px'
+'15px'
+
+title.textContent         // this will print all the text 
+'DOM learning on chai or code  test text '
+
+title.innerText  // this will print the text which is actually visible
+'DOM learning on chai or code'
+
+
+title.innerHTML        // this print the html tags as well
+'DOM learning on chai or code <span style="display: none;"> test text</span>
+
+document.getElementsByClassName('heading')
+HTMLCollection [h1#title.heading, title: h1#title.heading]
+
+QUERY SELECTORS
+
+document.querySelector('h1')   //this will give you the h1 elements
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+document.querySelector('#title')  // used to select the id
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+document.querySelector('.heading')   // used to select the class
+<h1 id=​"title" class=​"heading">​…​</h1>​
+
+
+DOM MANIPULATION
+
+
+document.querySelector('ul')
+<ul>​…​</ul>​
+
+const myul = document.querySelector('ul')
+undefined
+
+myul.querySelector('li')
+<li>​…​</li>​
+
+const turnGreen = myul.querySelector('li')
+undefined
+
+turnGreen.style.backgroundColor = "green"
+'green'
+
+turnGreen.innerText
+'one'
+
+turnGreen.innerText = 'five'
+'five'
+
+CHANGING THE COLORS OF ELEMENTS BY USING QUERYSELECTOR ALL
+
+document.querySelectorAll('li')
+NodeList(3) [li, li, li]
+
+const tempLi = document.querySelectorAll('li')
+undefined
+
+tempLi
+NodeList(3) [li, li, li]
+
+tempLi.style.color = 'green' //FAILED
+VM1227:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:20
+(anonymous) @ VM1227:1Understand this errorAI
+
+
+
+const tempLi = document.querySelectorAll('li')
+undefined
+
+tempLi
+NodeList(3) [li, li, li]
+
+tempLi[1].style.color = 'green' //DONE
+'green'
+
+
+const myH1 = document.querySelectorAll('h1')
+undefined
+
+myH1[0].style.color = 'green'
+'green'
+
+
++++++++++++++++++++++++++LEARN HOW TO CONVERT ANY LIST TO ARRAY TO APPLY LOOPS ON IT++++++++++++++++++++++++++++++++++++ 
+
+
+
+document.getElementsByClassName('list-test')
+HTMLCollection(4) [li.list-test, li.list-test, li.list-test, li.list-test]
+
+const tempClassList = document.getElementsByClassName('list-test')
+undefined
+
+tempClassList
+HTMLCollection(4) [li.list-test, li.list-test, li.list-test, li.list-test]
+
+Array.from(tempClassList)
+(4) [li.list-test, li.list-test, li.list-test, li.list-test]
+
+const myArrClassList = Array.from(tempClassList)
+undefined
+
+
+myArrClassList.forEach((li)=> {
+    li.style.color = 'orange'
+})
+undefined
+
+myArrClassList.forEach((l)=> {
+    l.style.color = 'pink'
+})
+undefined
+
+
+const myH2 = document.querySelectorAll('.mw-heading mw-heading2')
+undefined
+
+myH2
+NodeList []length: 0[[Prototype]]: NodeList
+
+const myH2 = document.querySelectorAll('.mw-heading')
+undefined
+
+myH2
+NodeList(58) [div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading3, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading4, div.mw-heading.mw-heading5, div.mw-heading.mw-heading5, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading3, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2, div.mw-heading.mw-heading2]0: div.mw-heading.mw-heading21: div.mw-heading.mw-heading32: div.mw-heading.mw-heading33: div.mw-heading.mw-heading34: div.mw-heading.mw-heading35: div.mw-heading.mw-heading36: div.mw-heading.mw-heading27: div.mw-heading.mw-heading28: div.mw-heading.mw-heading39: div.mw-heading.mw-heading310: div.mw-heading.mw-heading211: div.mw-heading.mw-heading212: div.mw-heading.mw-heading313: div.mw-heading.mw-heading314: div.mw-heading.mw-heading215: div.mw-heading.mw-heading316: div.mw-heading.mw-heading317: div.mw-heading.mw-heading318: div.mw-heading.mw-heading419: div.mw-heading.mw-heading420: div.mw-heading.mw-heading321: div.mw-heading.mw-heading422: div.mw-heading.mw-heading423: div.mw-heading.mw-heading424: div.mw-heading.mw-heading325: div.mw-heading.mw-heading426: div.mw-heading.mw-heading427: div.mw-heading.mw-heading328: div.mw-heading.mw-heading429: div.mw-heading.mw-heading430: div.mw-heading.mw-heading331: div.mw-heading.mw-heading432: div.mw-heading.mw-heading433: div.mw-heading.mw-heading434: div.mw-heading.mw-heading435: div.mw-heading.mw-heading436: div.mw-heading.mw-heading537: div.mw-heading.mw-heading538: div.mw-heading.mw-heading339: div.mw-heading.mw-heading240: div.mw-heading.mw-heading241: div.mw-heading.mw-heading342: div.mw-heading.mw-heading343: div.mw-heading.mw-heading344: div.mw-heading.mw-heading345: div.mw-heading.mw-heading346: div.mw-heading.mw-heading347: div.mw-heading.mw-heading348: div.mw-heading.mw-heading249: div.mw-heading.mw-heading250: div.mw-heading.mw-heading351: div.mw-heading.mw-heading352: div.mw-heading.mw-heading353: div.mw-heading.mw-heading354: div.mw-heading.mw-heading255: div.mw-heading.mw-heading256: div.mw-heading.mw-heading257: div.mw-heading.mw-heading2length: 58[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+
+myH2[0].innerText
+'History'
+
+myH2.forEach(function(h){
+    h.style.color='red'
+})
+undefined
+
+myH2.forEach(function(h){
+    h.style.backgroundColor='yellow'
+})
+undefined
+
+myH2.forEach(function(h){
+    h.style.backgroundColor='yellow'
+})
+undefined
+
+
+myH2.forEach(function(h){
+    h.style.backgroundColor='yellow';
+    h.innerText = 'aditya'
+})
+undefined
+--> 
