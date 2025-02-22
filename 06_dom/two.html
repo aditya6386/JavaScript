@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom| Chai or Code </title>
+</head>
+<body style = "background-color: #212121; color: #fff; ">
+    <div class = "parent">
+    <div class = "day">Monday</div>
+    <div class = "day">tuesday</div>
+    <div class = "day">wednesday</div>
+    <div class = "day">thursday</div>
+    </div>
+      
+</body>
+<script>
+// +++++++++++++++++query selector selects the elements from which you are requesting in the ( )
+const parent = document.querySelector('.parent')
+// console.log(parent);
+// console.log(parent.children); //days are children of parent
+// console.log(parent.children[1].innerHTML);
+//++++++++++++++++++applying basic for loop
+// for (let i = 0; i < parent.children.length; i++) {
+//     console.log(parent.children[i].innerHTML);
+// }
+// +++++++++++++adding color
+parent.children[1].style.color = "red"
+
+// console.log(parent.firstElementChild); // it will print the monday which is the first element in the parent class
+// console.log(parent.lastElementChild); //vice versa
+
+// MOVING FROM CHILD TO PARENT
+ const day1 = document.querySelector('.day')
+//  console.log(day1);
+//  console.log(day1.parentElement);  // it will print the parent class of day1
+//  console.log(day1.nextElementSibling);
+console.log("nodes:", parent.childNodes); // in this line break also  (only one)
+// NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+
+
+
+
+ 
+ 
+
+</script>
+</html>
