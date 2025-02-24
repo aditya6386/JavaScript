@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Chai or Code</title>
+</head>
+<body style = "background-color: #212121; color: #fff;" >
+</body>
+<script>
+    //creating elements and class
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main"
+    div.id = "myid"
+    div.id1 = Math.round(Math.random() * 10 + 1)
+    div.setAttribute("title", "chai or code") //adding title 
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+
+    // to show on the page 
+    const addText = document.createTextNode("Chai or Code")
+    div.appendChild(addText)
+    
+    document.body.appendChild(div) //command to print the elements on the page 
+
+</script>
+</html>
