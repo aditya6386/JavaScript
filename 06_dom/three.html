@@ -12,17 +12,20 @@
     const div = document.createElement('div')
     console.log(div);
     div.className = "main"
-    div.id = "myid"
-    div.id1 = Math.round(Math.random() * 10 + 1)
+    // div.id = "myid"
+    div.id = Math.round(Math.random() * 10 + 1)
     div.setAttribute("title", "chai and code") //adding title 
     div.style.backgroundColor = "green"
     div.style.padding = "12px"
 
     // to show on the page 
-    const addText = document.createTextNode("Chai or Code")
-    div.appendChild(addText)
+    div.innerText = "Chai or Code"
+    //         OR           //
+    const addText = document.createTextNode("Chai or Code") //creating textnode
+    div.appendChild(addText)     //adding textnode in the child
     
-    document.body.appendChild(div) //command to print the elements on the page 
+    document.body.appendChild(div) // taking the body of document then adding the append child in div
+    //command to print the elements on the page 
 
 </script>
 </html>
