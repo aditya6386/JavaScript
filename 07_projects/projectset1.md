@@ -1,0 +1,24 @@
+// selecting all button by class(.button)
+const buttons = document.querySelectorAll('.button');
+// selecting the body
+const body = document.querySelector('body');
+
+buttons.forEach(function (button) {
+  button.addEventListener('click', function (e) {
+    console.log(e) // pointer event 
+    console.log(e.target)   // it will notify that the from where this event is coming
+
+    if(e.target.id === 'grey'){
+      body.style.backgroundColor = e.target.id
+    }
+    if(e.target.id === 'white'){
+      body.style.backgroundColor = e.target.id
+    }
+    if(e.target.id === 'blue'){
+      body.style.backgroundColor = e.target.id
+    }
+    if(e.target.id === 'yellow'){
+      body.style.backgroundColor = e.target.id
+    }
+  });
+});
