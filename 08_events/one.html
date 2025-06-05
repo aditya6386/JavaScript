@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){ // we should use event listeners rather than onclick because they provide the propogation property
+    //     alert("owl clicked")
+    // two types of event propogation
+    // }
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log('clicked inside the ul');
+    }, false)
+
+    document.getElementById('owl').addEventListener('click', function(e){
+
+        console.log('owl clicked'); 
+    },false)   // false is used for bubble event and its default
+    // attachEvent(it is used before in past)
+    // in jQuery onEvent is used
+     
+    // Topic- Type Event
+
+   /* ***NOTE// type Event --- The type read-only property of the Event interface returns a string 
+   event propogation has two context - event bubbling and event capturigng*/
+   
+   /****NOTE//preventDefault --  It tells the browser:
+   "Hey, don't do the default thing you normally do when this event happens."
+   in js it stops the default action of an event from happening
+   for eg-- clicking on a link that opens that link into another page preventDefault makes you stay on the same page*/
+
+    /*  ***NOTE--- from chat gpt
+    <form id="myForm">
+    <input type="text" placeholder="Type something">
+    <button type="submit">Submit</button>
+    </form> 
+
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // 🚫 Stops the page from reloading
+       console.log("Form was submitted — but we prevented the default!");
+   }); */
+
+
+   /* event.Target 
+   Note -- event.target refers to the actual HTML element that triggered the event.
+   Code -- 
+   <button id="myButton">Click me</button>
+   document.getElementById("myButton").addEventListener("click", function(event) {
+   console.log(event.target); // The exact element clicked: <button id="myButton">Click me</button>
+   }); 
+
+
+   /* If you're using event delegation, it helps determine which child element was clicked.
+   Event Delegation is a technique in JavaScript where instead of adding event listeners to multiple child elements,
+   you add a single event listener to their common parent. That parent then listens for events bubbling up from its children.
+   CODE ---
+
+    document.getElementById("button-list").addEventListener("click", function(event) {
+    if (event.target.tagName === "BUTTON") {
+    console.log("You clicked:", event.target.textContent);
+    }
+    });
+    */
+
+//     document.getElementById('images').addEventListener('clicked', function(e){
+//         console.log('clicked inside the ul');
+//     })
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked again");
+        // e.stopPropagation()  // this is used to stop the bubble event 
+    }, false)
+
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+    })
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);                                      // it will give the image link with IMG tag and we are trying to remove the image 
+        if(e.target.tagName === 'IMG'){                                    // .target will return the link of image which is clicked.
+            console.log(event.target.id);
+            let removeIt = e.target.parentNode;// e.target.parentNode will return the <li> because the parent of the targeted image is li
+            removeIt.remove()
+        }
+        
+        // OR
+        // removeIt.parentNode.removeChild(removeIt)
+    })
+    </script>
+</html>
