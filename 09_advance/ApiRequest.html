@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github User Card</title>
+    <style>
+        .card {
+            width: 650px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 16px 0;
+            overflow: hidden;
+            min-height: 650px;
+        }
+        .card img {
+            width: 100%;
+        }
+        .card-body {
+            padding: 16px;
+        }
+        .card-title {
+            font-size: 1.25em;
+            margin-bottom: 8px;
+        }
+        .card-text {
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    
+<!-- 0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+<button id = 'getData'>GET DATA</button>
+<div id = "card-container"></div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'; // This defines the URL from which data will be requested
+    const xhr = new XMLHttpRequest();                                 // Creates a new instance of XMLHttpRequest which allows you to make HTTP requests in JavaScript.
+    xhr.open('GET', requestUrl)                                      // Initializes a GET request to the specified URL for retrieving data. This does not send the request yet.
+    xhr.onreadystatechange = function(){                            // Assigns a function to handle changes in the request's state.
+    console.log(xhr.readyState);                                   // Logs the current state of the request.
+    if(xhr.readyState === 4){                                     // Checks if the request is complete.
+        const data = JSON.parse(this.responseText);  // when response comes from url most of the times it would be sting    // Converts the JSON string response into a JavaScript object.
+        console.log(data)
+
+        const ImageUrl = data.avatar_url
+        console.log(ImageUrl);
+
+        console.log(typeof data);                               // Logs the type of data, which should be an object.
+        console.log(data.followers);                           // Logs the number of followers the user has on GitHub.
+        
+        document.getElementById('getData').addEventListener('click', function(){
+            const cardContainer = document.getElementById('card-container')
+
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const cardImage= document.createElement('img');
+            cardImage.src = ImageUrl;
+            cardImage.alt = 'User Avatar';
+
+            const cardBody = document.createElement('div');
+            cardBody.className = 'card-body';
+
+
+            const cardTitle = document.createElement('h4');
+                    cardTitle.className = 'card-title';
+                    cardTitle.textContent = data.login;
+
+            const cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.textContent = `followers ${data.followers}`;
+
+            cardBody.appendChild(cardTitle);
+            cardBody.appendChild(cardText);
+            card.appendChild(cardImage);
+            card.appendChild(cardBody);
+
+
+            cardContainer.appendChild(card);
+        })
+    }
+    }
+    xhr.send();                                             // Ensure xhr.send() is called to actually send the request.
+</script>
+</html>
